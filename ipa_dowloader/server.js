@@ -288,7 +288,7 @@ app.post('/download', async(req, res) => {
         //const fileUrl = `${req.protocol}s://ipadown.thuthuatjb.com/files/${path.basename(uniqueDownloadPath)}/${fileName}`;
         //const fileUrl = `${req.protocol}s://${serverIPAddress}:${port}/files/${path.basename(uniqueDownloadPath)}/${fileName}`;
         const fileUrl = `files/${path.basename(uniqueDownloadPath)}/${fileName}`;
-        console.log(fileUrl);
+        console.log(color_GREEN(showTime +'http://'+serverIPAddress+':'+port+'/'+fileUrl));
         // Schedule file deletion after 30 minutes
         setTimeout(async() => {
             try {
@@ -308,7 +308,7 @@ app.post('/download', async(req, res) => {
         });
     } catch (error) {
         console.error('Error during file processing:', error);
-        res.status(500).send(`Error: ${error.message}`);
+        res.status(500).send(`Error during file processing: ${error.message}`);
         console.log(`Error during file processing: ${error.message}`);
     }
 });
