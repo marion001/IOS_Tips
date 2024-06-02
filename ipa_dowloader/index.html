@@ -353,7 +353,9 @@
                         $('#retry-btn').removeClass('d-none');
                     },
                     error: function(xhr, status, error) {
-                        var message = 'Đã có lỗi xảy ra:<br>' +
+						
+                        var message = 'Đã có lỗi xảy ra: ' +error+'<br/>' +
+							'Trạng thái lỗi: '+xhr.responseText+'<br/>' +
                             '1. Kiểm tra các thông tin của bạn như AppID (hãy nhập số ID thay vì url), AppleID và mật khẩu.<br>' +
                             '2. Nếu bạn nhận được mã xác minh hãy nhập mã vào ô Mã xác minh 2 bước.<br>' +
                             '3. Công cụ này không thể lấy được ipa ứng dụng nếu AppleID của bạn đã nhập bên trên chưa từng tải ứng dụng đó bao giờ.';
